@@ -5,7 +5,8 @@ const nextConfig = {
       "utfs.io",
       "i.pinimg.com"
     ]
-  }
+  },
+  output: 'export',
 };
 
 export default nextConfig;
