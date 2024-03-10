@@ -3,7 +3,7 @@ const Home = () => {
     <div className="flex items-center justify-center mt-[10%] px-2 break-words">
       <div className="text-center text-white">
         <samp>
-          👋 Hello there, I'm Bao (Yanji), Frontend developer from CanTho,
+          👋 Hello there, I&apos;m Bao (Yanji), Frontend developer from CanTho,
           Vietnam.
         </samp>
         <p>
@@ -14,7 +14,7 @@ const Home = () => {
             <a className="text-amber-400 underline" href="/">resume</a> .
             <a className="text-amber-400 underline" href="/">
               projects
-            </a>{" "}
+            </a>
             .<a className="text-amber-400 underline" href="/">tweets</a> .
             <a className="text-amber-400 underline" href="/">
               contacts
