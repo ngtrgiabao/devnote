@@ -10,6 +10,7 @@ export const Sidebar = () => {
       </div>
       <div className="flex flex-col w-full">
         {/* TODO: add content */}
+        hello
       </div>
     </div>
   )
