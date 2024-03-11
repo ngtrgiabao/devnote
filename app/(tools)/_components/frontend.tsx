@@ -21,14 +21,18 @@ interface FrontendTools {
 
 export const Frontend = () => {
     const [frontendTools, setFrontendTools] = useState<FrontendTools[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     const getFrontendTools = async () => {
         try {
+            setIsLoading(true);
             await axios.get("/api/tools/frontend").then((res) => {
                 setFrontendTools(res.data);
+                setIsLoading(false);
             });
         } catch (error) {
             toast("Something went wrong");
+            setIsLoading(false);
         }
     };
 
@@ -55,19 +59,30 @@ export const Frontend = () => {
                         </TableRow>
                     </TableHeader>
                     <TableBody>
-                        {frontendTools?.map((tool) => (
-                            <TableRow key={tool.id}>
-                                <TableCell>{tool.handbook}</TableCell>
+                        {isLoading ? (
+                            <TableRow>
+                                <TableCell>Loading...</TableCell>
                                 <TableCell className="text-center">
-                                    <Link
-                                        href={tool.docs}
-                                        className="text-amber-400 underline"
-                                    >
-                                        #Docs
-                                    </Link>
+                                    Loading...
                                 </TableCell>
                             </TableRow>
-                        ))}
+                        ) : (
+                            <>
+                                {frontendTools?.map((tool) => (
+                                    <TableRow key={tool.id}>
+                                        <TableCell>{tool.handbook}</TableCell>
+                                        <TableCell className="text-center">
+                                            <Link
+                                                href={tool.docs}
+                                                className="text-amber-400 underline"
+                                            >
+                                                #Docs
+                                            </Link>
+                                        </TableCell>
+                                    </TableRow>
+                                ))}
+                            </>
+                        )}
                     </TableBody>
                 </Table>
             </div>

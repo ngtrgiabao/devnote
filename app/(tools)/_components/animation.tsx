@@ -20,15 +20,19 @@ interface AnimationTools {
 }
 
 export const Animation = () => {
+    const [isLoading, setIsLoading] = useState(true);
     const [animationTools, setAnimationTools] = useState<AnimationTools[]>([]);
 
     const getAnimationTools = async () => {
         try {
+            setIsLoading(true);
             await axios.get("/api/tools/animation").then((res) => {
                 setAnimationTools(res.data);
+                setIsLoading(false);
             });
         } catch (error) {
             toast("Something went wrong");
+            setIsLoading(false);
         }
     };
 
@@ -55,19 +59,32 @@ export const Animation = () => {
                         </TableRow>
                     </TableHeader>
                     <TableBody>
-                        {animationTools?.map((tool) => (
-                            <TableRow key={tool.id}>
-                                <TableCell>{tool.handbook}</TableCell>
+                        {isLoading ? (
+                            <TableRow>
+                                <TableCell>Loading...</TableCell>
                                 <TableCell className="text-center">
-                                    <Link
-                                        href={tool.docs}
-                                        className="text-amber-400 underline"
-                                    >
-                                        #Docs
-                                    </Link>
+                                    Loading...
                                 </TableCell>
                             </TableRow>
-                        ))}
+                        ) : (
+                            <>
+                                {animationTools?.map((animation) => (
+                                    <TableRow key={animation.id}>
+                                        <TableCell>
+                                            {animation.handbook}
+                                        </TableCell>
+                                        <TableCell className="text-center">
+                                            <Link
+                                                href={animation.docs}
+                                                className="text-amber-400 underline"
+                                            >
+                                                #Docs
+                                            </Link>
+                                        </TableCell>
+                                    </TableRow>
+                                ))}
+                            </>
+                        )}
                     </TableBody>
                 </Table>
             </div>
