@@ -28,8 +28,10 @@ export default function RootLayout({
                     enableSystem
                     disableTransitionOnChange
                 >
-                    <Navbar />
-                    <div className="bg-primary min-h-screen">{children}</div>
+                    <div className="bg-primary min-h-screen">
+                        <Navbar />
+                        {children}
+                    </div>
                 </ThemeProvider>
             </body>
         </html>
