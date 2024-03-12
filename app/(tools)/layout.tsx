@@ -5,7 +5,7 @@ export default function ToolsLayout({
 }) {
     return (
         <div className="h-full">
-            <main className="py-[80px] h-full flex-1">{children}</main>
+            <main className="py-[80px] h-full">{children}</main>
         </div>
     );
 }

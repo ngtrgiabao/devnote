@@ -1,7 +1,20 @@
+"use client";
+
+import Image from "next/image";
+
+import Avatar from "../../../public/images/avatar.png";
+
 const Home = () => {
     return (
-        <div className="flex items-center justify-center mt-[10%] text-sm md:text-base px-2 md:px-0 break-words">
+        <div className="flex justify-center mt-[5%] text-sm md:text-base px-2 md:px-0 break-words">
             <div className="text-center text-white">
+                <div className="mb-10 flex justify-center">
+                    <Image
+                        src={Avatar}
+                        alt="avatar"
+                        className="rounded-full object-cover w-36 h-36"
+                    />
+                </div>
                 <samp>
                     👋 Hello there, I&apos;m Bao (Yanji), Frontend developer
                     from CanTho, Vietnam.

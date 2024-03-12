@@ -2,7 +2,7 @@
 
 import {
     BookOpen,
-    Braces,
+    BriefcaseBusiness,
     Github,
     Home,
     Lightbulb,
@@ -71,16 +71,16 @@ export const Sidebar = () => {
                 <Link
                     className={
                         "sb-sheet-content" +
-                        (pathname === "/javascript"
+                        (pathname === "/my-works"
                             ? " bg-blue-400/15 text-blue-500"
                             : "")
                     }
                     target="_self"
-                    href="/javascript"
+                    href="/my-works"
                     shallow={true}
                 >
-                    <Braces className="me-3" />
-                    Javascript
+                    <BriefcaseBusiness className="me-3" />
+                    My works
                 </Link>
                 <Link
                     className={

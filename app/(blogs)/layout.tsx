@@ -6,7 +6,7 @@ export default function BlogsLayout({
     return (
         <div className="h-screen">
             <div className="h-full overflow-hidden">
-                <main className="pt-[80px] h-full flex-1">{children}</main>
+                <main className="pt-[80px] h-">{children}</main>
             </div>
         </div>
     );
