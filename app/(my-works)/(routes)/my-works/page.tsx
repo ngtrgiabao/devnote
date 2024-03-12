@@ -8,15 +8,15 @@ const MyWorks = () => {
                 My Works
             </h3>
 
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-3 text-white w-full">
+            <div className="grid grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-3 text-white w-ful  ">
                 {worksData.map((data, idx) => {
                     return (
                         <Card
                             key={idx}
-                            id={data.id}
                             imageUrl={data.imageUrl}
                             title={data.title}
                             description={data.description}
+                            github={data.github}
                         />
                     );
                 })}

@@ -2,55 +2,58 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Github } from "lucide-react";
+import { Github, MoveRight } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 
 interface CardProps {
-    id: string;
     imageUrl: string;
     title: string;
     description: string;
+    github: string;
 }
 
-const Card = ({ id, imageUrl, title, description }: CardProps) => {
+const Card = ({ imageUrl, title, description, github }: CardProps) => {
     return (
-        <div className="p-4 rounded-lg bg-slate-800 flex flex-col space-y-4">
-            <div className="w-full h-full">
-                <Image
-                    src={imageUrl}
-                    width={0}
-                    height={0}
-                    alt={title}
-                    style={{ width: "100%", height: "100%" }}
-                    className="object-cover"
-                />
-            </div>
+        <div className="relative h-full">
+            <div className="p-4 rounded-lg bg-slate-800 flex flex-col space-y-4 border border-gray-400 relative z-20 h-full">
+                <div className="w-full h-full">
+                    <Image
+                        src={imageUrl}
+                        width="0"
+                        height="0"
+                        sizes="100vw"
+                        className="w-full h-auto object-cover"
+                        alt={title}
+                        style={{ width: "100%", height: "100%" }}
+                    />
+                </div>
 
-            <div className="mt-4 space-y-4">
-                <h3 className="text-xl md:text-2xl font-bold uppercase">
-                    {title}
-                </h3>
-                <p className="font-extralight text-xs">{description}</p>
-                <div>
-                    <Badge variant="warning">JS</Badge>
+                <div className="mt-4 space-y-4">
+                    <h3 className="text-xl font-bold uppercase">{title}</h3>
+                    <p className="font-extralight text-xs">{description}</p>
+                    <div>
+                        <Badge variant="warning">JS</Badge>
+                    </div>
+                </div>
+
+                <div className="w-full flex items-center justify-end gap-2">
+                    <Link
+                        href={github}
+                        className="hover:bg-white hover:text-black text-white p-2 text-sm rounded-full w-max hover:transition hover:duration-300"
+                    >
+                        <Github size={20} />
+                    </Link>
+                    <Link
+                        href={`/my-works`}
+                        className="text-white font-bold p-2 text-base flex items-center hover:transition hover:duration-300 hover:bg-white hover:text-black rounded-full w-max px-4"
+                    >
+                        Discover
+                        <MoveRight className="ms-2" size={15} />
+                    </Link>
                 </div>
             </div>
-
-            <div className="w-full flex items-center justify-end gap-2">
-                <Link
-                    href={`/my-works/${id}`}
-                    className="hover:bg-white hover:text-black text-white p-2 text-sm rounded-full w-max"
-                >
-                    <Github size={20} />
-                </Link>
-                <Link
-                    href={`/my-works/${id}`}
-                    className="bg-white p-2 text-sm text-black rounded-lg w-max"
-                >
-                    Discover
-                </Link>
-            </div>
+            <div className="absolute -inset-[0.1em] rounded-md blur-lg bg-gradient-to-br from-blue-500 via-cyan-500 to-violet-500 z-10"></div>
         </div>
     );
 };
