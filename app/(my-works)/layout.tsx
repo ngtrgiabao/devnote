@@ -6,7 +6,7 @@ export default function MyWorksLayout({
     return (
         <div className="h-full">
             <div className="h-full">
-                <main className="pt-[80px] h-full flex">{children}</main>
+                <main className="pt-[80px] h-full flex py-6">{children}</main>
             </div>
         </div>
     );
