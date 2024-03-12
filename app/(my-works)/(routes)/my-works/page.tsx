@@ -9,9 +9,10 @@ const MyWorks = () => {
             </h3>
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3 text-white w-full">
-                {worksData.map((data) => {
+                {worksData.map((data, idx) => {
                     return (
                         <Card
+                            key={idx}
                             id={data.id}
                             imageUrl={data.imageUrl}
                             title={data.title}
