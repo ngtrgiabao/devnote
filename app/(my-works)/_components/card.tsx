@@ -17,7 +17,7 @@ const Card = ({ imageUrl, title, description, github }: CardProps) => {
     return (
         <div className="relative h-full">
             <div className="p-4 rounded-lg bg-slate-800 flex flex-col space-y-4 border border-gray-400 relative z-20 h-full">
-                <div className="w-full h-full">
+                <div className="w-full h-full bg-white">
                     <Image
                         src={imageUrl}
                         width="0"
@@ -31,7 +31,9 @@ const Card = ({ imageUrl, title, description, github }: CardProps) => {
 
                 <div className="mt-4 space-y-4">
                     <h3 className="text-xl font-bold uppercase">{title}</h3>
-                    <p className="font-extralight text-xs">{description}</p>
+                    <p className="font-extralight text-xs line-clamp-3">
+                        {description}
+                    </p>
                     <div>
                         <Badge variant="warning">JS</Badge>
                     </div>
