@@ -18,8 +18,9 @@ export const Sidebar = () => {
                 <Logo />
             </div>
             <section className="flex flex-col w-full">
-                {allRoutes.map((route) => (
+                {allRoutes.map((route, idx) => (
                     <Link
+                        key={idx}
                         href={route.href}
                         className={
                             "sb-sheet-content" +
