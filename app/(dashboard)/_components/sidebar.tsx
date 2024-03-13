@@ -1,20 +1,13 @@
 "use client";
 
-import {
-    BookOpen,
-    BriefcaseBusiness,
-    Github,
-    Home,
-    Lightbulb,
-    Linkedin,
-    Wrench,
-} from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 import { Logo } from "./logo";
 
 import "./styles/mobile-sidebar.css";
-import Link from "next/link";
+import { allRoutes } from "./all-routes";
 
 export const Sidebar = () => {
     const pathname = usePathname();
@@ -25,77 +18,20 @@ export const Sidebar = () => {
                 <Logo />
             </div>
             <section className="flex flex-col w-full">
-                <Link
-                    className={
-                        "sb-sheet-content" +
-                        (pathname === "/"
-                            ? " bg-blue-400/15 text-blue-500"
-                            : "")
-                    }
-                    target="_self"
-                    aria-current="page"
-                    href="/"
-                    shallow={true}
-                >
-                    <Home className="me-3" />
-                    Home
-                </Link>
-                <Link
-                    className={
-                        "sb-sheet-content" +
-                        (pathname === "/blogs"
-                            ? " bg-blue-400/15 text-blue-500"
-                            : "")
-                    }
-                    target="_self"
-                    href="/blogs"
-                    shallow={true}
-                >
-                    <BookOpen className="me-3" />
-                    Blog
-                </Link>
-                <Link
-                    className={
-                        "sb-sheet-content" +
-                        (pathname === "/issues"
-                            ? " bg-blue-400/15 text-blue-500"
-                            : "")
-                    }
-                    target="_self"
-                    href="/issues"
-                    shallow={true}
-                >
-                    <Lightbulb className="me-3" />
-                    Issues
-                </Link>
-                <Link
-                    className={
-                        "sb-sheet-content" +
-                        (pathname === "/my-works"
-                            ? " bg-blue-400/15 text-blue-500"
-                            : "")
-                    }
-                    target="_self"
-                    href="/my-works"
-                    shallow={true}
-                >
-                    <BriefcaseBusiness className="me-3" />
-                    My works
-                </Link>
-                <Link
-                    className={
-                        "sb-sheet-content" +
-                        (pathname === "/tools"
-                            ? " bg-blue-400/15 text-blue-500"
-                            : "")
-                    }
-                    target="_self"
-                    href="/tools"
-                    shallow={true}
-                >
-                    <Wrench className="me-3" />
-                    Tools
-                </Link>
+                {allRoutes.map((route) => (
+                    <Link
+                        href={route.href}
+                        className={
+                            "sb-sheet-content" +
+                            (pathname === route.href
+                                ? " bg-blue-400/15 text-blue-500"
+                                : "")
+                        }
+                    >
+                        {route.icon}
+                        {route.name}
+                    </Link>
+                ))}
             </section>
             <section className="w-full mt-4">
                 <h4 className="text-xs text-gray-400 px-4 pb-2">Contacts</h4>
