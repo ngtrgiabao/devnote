@@ -43,7 +43,7 @@ export const Sidebar = () => {
                 <Link
                     className={
                         "sb-sheet-content" +
-                        (pathname === "/blog"
+                        (pathname === "/blogs"
                             ? " bg-blue-400/15 text-blue-500"
                             : "")
                     }
