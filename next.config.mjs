@@ -3,9 +3,12 @@ const nextConfig = {
   images: {
     domains: [
       "utfs.io",
-      "i.pinimg.com",      
+      "i.pinimg.com",
     ],
-    unoptimized: true
+    unoptimized: true,
+  },
+  api: {
+    bodyParser: false,
   },
   output: 'export',
 };

@@ -6,7 +6,7 @@ export default function BlogsLayout({
     return (
         <div className="h-full">
             <div className="h-full overflow-hidden text-white">
-                <main className="py-10 h-full">{children}</main>
+                <main className="py-10 h-full mx-8 lg:mx-72">{children}</main>
             </div>
         </div>
     );

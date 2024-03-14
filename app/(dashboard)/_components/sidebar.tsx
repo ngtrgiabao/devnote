@@ -1,13 +1,19 @@
 "use client";
 
-import { Github, Linkedin } from "lucide-react";
+import {
+    Bug,
+    Github,
+    LayoutDashboard,
+    Linkedin,
+    NotebookPen,
+    PencilRuler,
+} from "lucide-react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-import { Logo } from "./logo";
-
-import "./styles/mobile-sidebar.css";
 import { allRoutes } from "./all-routes";
+import { Logo } from "./logo";
+import "./styles/mobile-sidebar.css";
 
 export const Sidebar = () => {
     const pathname = usePathname();

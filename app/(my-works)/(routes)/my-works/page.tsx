@@ -1,5 +1,5 @@
 import Card from "../../_components/card";
-import { worksData } from "../../_components/data";
+import { WorksData } from "../../_components/data";
 
 const MyWorks = () => {
     return (
@@ -9,7 +9,7 @@ const MyWorks = () => {
             </h3>
 
             <div className="grid grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-3 text-white w-ful  ">
-                {worksData.map((data, idx) => {
+                {WorksData.map((data, idx) => {
                     return (
                         <Card
                             key={idx}

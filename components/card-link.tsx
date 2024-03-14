@@ -1,12 +1,15 @@
+import Link from "next/link";
+
 interface CardLinkProps {
     title: string;
     description: string;
+    link: string;
 }
 
-const CardLink = ({ title, description }: CardLinkProps) => {
+const CardLink = ({ title, description, link }: CardLinkProps) => {
     return (
-        <a
-            href="/"
+        <Link
+            href={link}
             className="relative h-full w-full transform transition-all duration-300 ease-in-out"
         >
             <div className="p-4 rounded-lg bg-slate-800 flex flex-col space-y-4 border border-gray-400 relative z-20 h-full text-justify">
@@ -20,7 +23,7 @@ const CardLink = ({ title, description }: CardLinkProps) => {
                 </div>
             </div>
             <div className="absolute -inset-[0.01em] rounded-md blur-md bg-gradient-to-br from-blue-500 via-cyan-500 to-violet-500 z-10"></div>
-        </a>
+        </Link>
     );
 };
 

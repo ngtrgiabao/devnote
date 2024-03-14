@@ -1,4 +1,4 @@
-export const worksData = [
+export const WorksData = [
   {
     title: "udemy clone",
     imageUrl: "https://github.com/ngtrgiabao/udemy-clone/raw/main/image.png",
