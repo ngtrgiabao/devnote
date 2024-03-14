@@ -11,7 +11,7 @@ const CardLink = ({ title, description }: CardLinkProps) => {
         >
             <div className="p-4 rounded-lg bg-slate-800 flex flex-col space-y-4 border border-gray-400 relative z-20 h-full text-justify">
                 <div className="space-y-4">
-                    <h3 className="text-sm text-blue-400 font-bold capitalize">
+                    <h3 className="text-base text-blue-400 font-bold capitalize">
                         🐳 {title}
                     </h3>
                     <p className="font-extralight text-xs line-clamp-3">
