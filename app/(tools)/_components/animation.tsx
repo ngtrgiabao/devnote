@@ -74,9 +74,7 @@ export const Animation = () => {
                                         <TableCell>
                                             {animation.handbook}
                                         </TableCell>                                        
-                                        <TableCell >
-                                            {animation.description}
-                                        </TableCell>
+                                        <TableCell className="text-nowrap md:text-wrap">{animation.description}</TableCell>
                                         <TableCell className="text-center">
                                             <Link
                                                 href={animation.docs}

@@ -75,7 +75,7 @@ export const LowCode = () => {
                                 {frontendTools?.map((tool) => (
                                     <TableRow key={tool.id}>
                                         <TableCell>{tool.handbook}</TableCell>
-                                        <TableCell>{tool.description}</TableCell>
+                                        <TableCell className="text-nowrap md:text-wrap">{tool.description}</TableCell>
                                         <TableCell className="text-center">
                                             <Link
                                                 href={tool.docs}
