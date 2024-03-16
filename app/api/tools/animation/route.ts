@@ -9,7 +9,7 @@ export async function GET(req: Request) {
 
     return new Response(JSON.stringify(frontend))
   } catch (error) {
-    console.log("[FRONTEND_TOOLS]", error);
+    console.log("[ANIMATION_TOOLS]", error);
     return new NextResponse("Internal Error", { status: 500 });
   }
 }

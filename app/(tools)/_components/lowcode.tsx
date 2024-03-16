@@ -16,6 +16,7 @@ import Link from "next/link";
 interface FrontendTools {
     id: string;
     handbook: string;
+    description: string;
     docs: string;
 }
 
@@ -26,7 +27,7 @@ export const LowCode = () => {
     const getFrontendTools = async () => {
         try {
             setIsLoading(true);
-            await axios.get("/api/tools/frontend").then((res) => {
+            await axios.get("/api/tools/lowcode").then((res) => {
                 setFrontendTools(res.data);
                 setIsLoading(false);
             });
@@ -43,7 +44,7 @@ export const LowCode = () => {
     return (
         <div className="w-full flex flex-col justify-center">
             <h3 className="text-xl text-center md:text-3xl font-bold mb-4 text-white">
-                Frontend
+                Lowcode Platform / AI Tools
             </h3>
 
             <div className="text-white ">
@@ -53,8 +54,11 @@ export const LowCode = () => {
                             <TableHead className="font-bold uppercase">
                                 handbook
                             </TableHead>
+                            <TableHead className="font-bold uppercase">
+                                description
+                            </TableHead>
                             <TableHead className="font-bold uppercase text-center">
-                                Document
+                                document
                             </TableHead>
                         </TableRow>
                     </TableHeader>
@@ -71,10 +75,12 @@ export const LowCode = () => {
                                 {frontendTools?.map((tool) => (
                                     <TableRow key={tool.id}>
                                         <TableCell>{tool.handbook}</TableCell>
+                                        <TableCell>{tool.description}</TableCell>
                                         <TableCell className="text-center">
                                             <Link
                                                 href={tool.docs}
                                                 className="text-amber-400 underline"
+                                                target="_blank"
                                             >
                                                 #Docs
                                             </Link>

@@ -16,6 +16,7 @@ import Link from "next/link";
 interface FrontendTools {
     id: string;
     handbook: string;
+    description: string;
     docs: string;
 }
 
@@ -53,8 +54,11 @@ export const Frontend = () => {
                             <TableHead className="font-bold uppercase">
                                 handbook
                             </TableHead>
+                            <TableHead className="font-bold uppercase">
+                                description
+                            </TableHead>
                             <TableHead className="font-bold uppercase text-center">
-                                Document
+                                document
                             </TableHead>
                         </TableRow>
                     </TableHeader>
@@ -71,10 +75,12 @@ export const Frontend = () => {
                                 {frontendTools?.map((tool) => (
                                     <TableRow key={tool.id}>
                                         <TableCell>{tool.handbook}</TableCell>
+                                        <TableCell>{tool.description}</TableCell>
                                         <TableCell className="text-center">
                                             <Link
                                                 href={tool.docs}
                                                 className="text-amber-400 underline"
+                                                target="_blank"
                                             >
                                                 #Docs
                                             </Link>

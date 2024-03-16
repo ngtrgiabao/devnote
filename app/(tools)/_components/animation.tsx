@@ -16,6 +16,7 @@ import Link from "next/link";
 interface AnimationTools {
     id: string;
     handbook: string;
+    description: string;
     docs: string;
 }
 
@@ -54,7 +55,7 @@ export const Animation = () => {
                                 handbook
                             </TableHead>
                             <TableHead className="font-bold uppercase text-center">
-                                Document
+                                document
                             </TableHead>
                         </TableRow>
                     </TableHeader>
@@ -72,11 +73,15 @@ export const Animation = () => {
                                     <TableRow key={animation.id}>
                                         <TableCell>
                                             {animation.handbook}
+                                        </TableCell>                                        
+                                        <TableCell >
+                                            {animation.description}
                                         </TableCell>
                                         <TableCell className="text-center">
                                             <Link
                                                 href={animation.docs}
                                                 className="text-amber-400 underline"
+                                                target="_blank"
                                             >
                                                 #Docs
                                             </Link>
