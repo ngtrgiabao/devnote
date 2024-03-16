@@ -3,7 +3,7 @@ import { IssuesData } from "../../_components/data";
 
 const IssuesPage = () => {
     return (
-        <div className="flex flex-col justify-center items-center mx-8 lg:mx-72 space-y-10">
+        <div className="flex flex-col justify-center items-center space-y-10">
             {IssuesData.map((data, idx) => (
                 <>
                     <CardLink
