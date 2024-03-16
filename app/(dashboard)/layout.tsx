@@ -4,8 +4,8 @@ export default function BlogsLayout({
     children: React.ReactNode;
 }) {
     return (
-        <div className="h-full overflow-hidden text-white">
-            <main className="py-10 h-full">{children}</main>
+        <div className="h-full py-10 text-white">
+            {children}
         </div>
     );
 }

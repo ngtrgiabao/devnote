@@ -6,7 +6,7 @@ import Avatar from "../../../public/images/avatar.png";
 
 const Home = () => {
     return (
-        <div className="flex justify-center mt-[5%] text-sm md:text-base px-2 md:px-0 break-words">
+        <div className="flex justify-center mt-[5%] text-sm md:text-base break-words">
             <div className="text-center text-white">
                 <div className="mb-10 flex justify-center">
                     <Image
