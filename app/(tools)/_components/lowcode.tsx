@@ -1,17 +1,9 @@
 "use client";
 
-import {
-    Table,
-    TableBody,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow,
-} from "@/components/ui/table";
 import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
-import Link from "next/link";
+import { TableData } from "./table";
 
 interface FrontendTools {
     id: string;
@@ -48,45 +40,7 @@ export const LowCode = () => {
             </h3>
 
             <div className="text-white ">
-                <Table>
-                    <TableHeader>
-                        <TableRow>
-                            <TableHead className="font-bold uppercase">
-                                handbook
-                            </TableHead>
-                            <TableHead className="font-bold uppercase">
-                                description
-                            </TableHead>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        {isLoading ? (
-                            <TableRow>
-                                <TableCell>Loading...</TableCell>
-                                <TableCell className="text-center">
-                                    Loading...
-                                </TableCell>
-                            </TableRow>
-                        ) : (
-                            <>
-                                {frontendTools?.map((tool) => (
-                                    <TableRow key={tool.id}>
-                                        <TableCell className="text-left">
-                                            <Link
-                                                href={tool.docs}
-                                                className="text-amber-400 underline"
-                                                target="_blank"
-                                            >
-                                                {tool.handbook}
-                                            </Link>
-                                        </TableCell>
-                                        <TableCell className="text-nowrap md:text-wrap">{tool.description}</TableCell>                                    
-                                    </TableRow>
-                                ))}
-                            </>
-                        )}
-                    </TableBody>
-                </Table>
+                <TableData data={frontendTools} isLoading={isLoading} />
             </div>
 
             <Toaster />

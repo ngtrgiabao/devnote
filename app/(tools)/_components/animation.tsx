@@ -1,17 +1,9 @@
-"use client";
+"use client"
 
-import {
-    Table,
-    TableBody,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow,
-} from "@/components/ui/table";
 import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
-import Link from "next/link";
+import { TableData } from "./table";
 
 interface AnimationTools {
     id: string;
@@ -48,42 +40,7 @@ export const Animation = () => {
             </h3>
 
             <div className="text-white ">
-                <Table>
-                    <TableHeader>
-                        <TableRow>
-                            <TableHead className="font-bold uppercase">
-                                handbook
-                            </TableHead>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        {isLoading ? (
-                            <TableRow>
-                                <TableCell>Loading...</TableCell>
-                                <TableCell className="text-center">
-                                    Loading...
-                                </TableCell>
-                            </TableRow>
-                        ) : (
-                            <>
-                                {animationTools?.map((animation) => (
-                                    <TableRow key={animation.id}>
-                                        <TableCell className="text-left">
-                                            <Link
-                                                href={animation.docs}
-                                                className="text-amber-400 underline"
-                                                target="_blank"
-                                            >
-                                                {animation.handbook}
-                                            </Link>
-                                        </TableCell>
-                                        <TableCell className="text-nowrap md:text-wrap">{animation.description}</TableCell>
-                                    </TableRow>
-                                ))}
-                            </>
-                        )}
-                    </TableBody>
-                </Table>
+                <TableData data={animationTools} isLoading={isLoading} />
             </div>
 
             <Toaster />
