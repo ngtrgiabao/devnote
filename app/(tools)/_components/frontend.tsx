@@ -57,9 +57,6 @@ export const Frontend = () => {
                             <TableHead className="font-bold uppercase">
                                 description
                             </TableHead>
-                            <TableHead className="font-bold uppercase text-center">
-                                document
-                            </TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -74,17 +71,16 @@ export const Frontend = () => {
                             <>
                                 {frontendTools?.map((tool) => (
                                     <TableRow key={tool.id}>
-                                        <TableCell>{tool.handbook}</TableCell>
-                                        <TableCell className="text-nowrap md:text-wrap">{tool.description}</TableCell>
-                                        <TableCell className="text-center">
+                                        <TableCell className="text-left">
                                             <Link
                                                 href={tool.docs}
                                                 className="text-amber-400 underline"
                                                 target="_blank"
                                             >
-                                                #Docs
+                                                {tool.handbook}
                                             </Link>
                                         </TableCell>
+                                        <TableCell className="text-nowrap md:text-wrap">{tool.description}</TableCell>                                        
                                     </TableRow>
                                 ))}
                             </>

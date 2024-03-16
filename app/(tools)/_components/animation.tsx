@@ -54,9 +54,6 @@ export const Animation = () => {
                             <TableHead className="font-bold uppercase">
                                 handbook
                             </TableHead>
-                            <TableHead className="font-bold uppercase text-center">
-                                document
-                            </TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -71,19 +68,16 @@ export const Animation = () => {
                             <>
                                 {animationTools?.map((animation) => (
                                     <TableRow key={animation.id}>
-                                        <TableCell>
-                                            {animation.handbook}
-                                        </TableCell>                                        
-                                        <TableCell className="text-nowrap md:text-wrap">{animation.description}</TableCell>
-                                        <TableCell className="text-center">
+                                        <TableCell className="text-left">
                                             <Link
                                                 href={animation.docs}
                                                 className="text-amber-400 underline"
                                                 target="_blank"
                                             >
-                                                #Docs
+                                                {animation.handbook}
                                             </Link>
                                         </TableCell>
+                                        <TableCell className="text-nowrap md:text-wrap">{animation.description}</TableCell>
                                     </TableRow>
                                 ))}
                             </>
