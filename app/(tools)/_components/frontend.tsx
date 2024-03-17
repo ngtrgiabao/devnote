@@ -3,16 +3,10 @@ import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
 import { TableData } from "./table";
-
-interface FrontendTools {
-    id: string;
-    handbook: string;
-    description: string;
-    docs: string;
-}
+import { ITools } from "./interface";
 
 export const Frontend = () => {
-    const [frontendTools, setFrontendTools] = useState<FrontendTools[]>([]);
+    const [frontendTools, setFrontendTools] = useState<ITools[]>([]);
     const [isLoading, setIsLoading] = useState(true);
 
     const getFrontendTools = async () => {

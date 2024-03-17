@@ -4,17 +4,11 @@ import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
 import { TableData } from "./table";
-
-interface AnimationTools {
-    id: string;
-    handbook: string;
-    description: string;
-    docs: string;
-}
+import { ITools } from "./interface";
 
 export const Animation = () => {
     const [isLoading, setIsLoading] = useState(true);
-    const [animationTools, setAnimationTools] = useState<AnimationTools[]>([]);
+    const [animationTools, setAnimationTools] = useState<ITools[]>([]);
 
     const getAnimationTools = async () => {
         try {

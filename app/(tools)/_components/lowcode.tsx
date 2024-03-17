@@ -4,19 +4,13 @@ import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
 import { TableData } from "./table";
-
-interface FrontendTools {
-    id: string;
-    handbook: string;
-    description: string;
-    docs: string;
-}
+import { ITools } from "./interface";
 
 export const LowCode = () => {
-    const [frontendTools, setFrontendTools] = useState<FrontendTools[]>([]);
+    const [frontendTools, setFrontendTools] = useState<ITools[]>([]);
     const [isLoading, setIsLoading] = useState(true);
 
-    const getFrontendTools = async () => {
+    const getLowcodeTools = async () => {
         try {
             setIsLoading(true);
             await axios.get("/api/tools/lowcode").then((res) => {
@@ -30,7 +24,7 @@ export const LowCode = () => {
     };
 
     useEffect(() => {
-        getFrontendTools();
+        getLowcodeTools();
     }, []);
 
     return (

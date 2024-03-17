@@ -36,13 +36,13 @@ export const TableData = ({ data, isLoading }: TableProps) => {
                   <TableCell className="text-left">
                     <Link
                       href={d.docs}
-                      className="text-amber-400 underline"
+                      className="text-amber-400 underline capitalize"
                       target="_blank"
                     >
                       {d.handbook}
                     </Link>
                   </TableCell>
-                  <TableCell className="text-nowrap md:text-wrap">{d.description}</TableCell>
+                  <TableCell className="text-nowrap md:text-wrap capitalize">{d.description}</TableCell>
                 </TableRow>
               ))}
             </>
